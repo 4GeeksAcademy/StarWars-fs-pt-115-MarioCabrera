@@ -34,7 +34,7 @@ export const Navbar = () => {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 
-					<ul className="dropdown-menu bg-dark text-white mt-2" style={{ minWidth: "200px" }}>
+					<ul className="dropdown-menu dropdown-menu-end bg-dark text-white mt-2" style={{ minWidth: "200px" }}>
 						{store.favorites.length > 0 && store.favorites[0] !== "(Empty)" ? (
 							store.favorites.map((element, index) => (
 								<li key={index} className="d-flex justify-content-between align-items-center px-2 py-1">

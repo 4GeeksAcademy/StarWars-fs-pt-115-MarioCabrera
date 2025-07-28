@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+import {useState, useEffect } from "react";
 
 export const DetailedStyleInfo = (props) => {
     const { store } = useGlobalReducer();
+    const [race,setRace] = useState("human")
+    
+    useEffect(() => {
+    const userRace = props.styleUsers?.find(user => {
+        const character = store.characters.find(character => character.name === user.name);
+        return character?.race;
+    });
 
+    if (userRace) {
+        const character = store.characters.find(character => character.name === userRace.name);
+        setRace(character?.race || "Human");
+    }
+}, [props.styleUsers, store.characters]);
     return (
         <div className="container my-4">
             <div className="row bg-white bg-opacity-75 rounded p-3 g-3">
@@ -24,7 +37,7 @@ export const DetailedStyleInfo = (props) => {
                     <p className="fs-5">{props.description}</p>
 
                     <h4 className="my-2">
-                        {props.race === "Human" ? "Breathing Users" : "Blood Users"}
+                        {race === "Human" ? "Breathing Users" : "Blood Users"}
                     </h4>
 
                     <div className="d-flex overflow-auto flex-nowrap gap-3 py-2">
