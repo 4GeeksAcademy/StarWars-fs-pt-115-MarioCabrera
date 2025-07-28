@@ -24,7 +24,7 @@ export const Home = () => {
 
 		<div className="home-page">
 			<div className="container ">
-				<h3 className="fw-bold pt-4 text-white">Cazadores</h3>
+				<h3 className="fw-bold pt-4 text-white title">Cazadores</h3>
 				<div className="d-flex overflow-x-auto flex-nowrap gap-2">
 					{hunters.map((element, index) => (
 						<CharactersCard
@@ -36,7 +36,7 @@ export const Home = () => {
 						/>
 					))}
 				</div>
-				<h3 className="fw-bold mt-4 text-white">Demonios</h3>
+				<h3 className="fw-bold mt-4 text-white title">Demonios</h3>
 				<div className="d-flex overflow-x-auto flex-nowrap gap-2">
 					{demons.map((element, index) => (
 						<CharactersCard
@@ -48,7 +48,7 @@ export const Home = () => {
 						/>
 					))}
 				</div>
-				<h3 className="fw-bold mt-4 text-white">Estilos de combate</h3>
+				<h3 className="fw-bold mt-4 text-white title">Estilos de combate</h3>
 				<div className="d-flex overflow-x-auto flex-nowrap gap-2">
 					{availableStyles.map((element, index) => (
 						<CharactersCard
